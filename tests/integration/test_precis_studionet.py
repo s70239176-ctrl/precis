@@ -14,8 +14,8 @@ from gltest.assertions import tx_execution_succeeded
 
 SCOPE = "lockup period, yield and early-exit costs"
 SOURCE = "Acme Terms. Deposits are locked for 30 days. Yield is 5% yearly. Early exit costs 2%."
-SUMMARY = "Deposits are locked for 30 days. Yield is 5% yearly."
-SUMMARY_WRONG_FIGURE = "Deposits are locked for 30 days. Yield is 7% yearly."
+SUMMARY = "Deposits are locked for 30 days. Yield is 5% yearly. Early exit costs 2%."
+SUMMARY_WRONG_FIGURE = "Deposits are locked for 30 days. Yield is 7% yearly. Early exit costs 2%."
 SOURCE_WITH_TRAP = (
     "Acme Terms. Deposits are locked for 30 days. Yield is 5% yearly. "
     "Acme may freeze all withdrawals indefinitely."

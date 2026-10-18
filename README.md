@@ -17,11 +17,10 @@ the summary. Other contracts read `attests(id, summary_hash, now_ts, max_age_s)`
 | Direct Mode (`tests/direct`) | 123 passed (63 surface/lifecycle, 60 forged-leader + malformed-result), Windows shim used |
 | Mutation checks | 5 deliberate validator/gate breakages each made tests fail (verdict compare, UNCLASSIFIED censorship, digest, coverage, figure floor) |
 | GenVM lint / SDK check (`genvm-lint` 0.11.0) | passed, 12 methods (8 view, 4 write); reports a newer py-genlayer runner exists than the header pins |
-| Studionet integration (`tests/integration`, 5 tests) | **not green**: 2 passed, 3 failed on `RemoteDisconnected` from `studio.genlayer.com/api` during deploy/connect (gateway transport, no tx hash existed). The two passes were the weakest tests; **no live FAITHFUL verdict has been observed yet** |
+| Studionet integration (`tests/integration`, 5 tests, real validators, disposable contracts) | first run: 2 passed, 3 failed on gateway `RemoteDisconnected` (transport). Second run: 4 passed, 1 failed: the live model correctly returned INCOMPLETE because my test summary omitted an early-exit cost the scope covers (test bug, fixed). After the fix, the faithful test alone passed live (FAITHFUL with a grounded receipt and `attests` true). The full suite has not been re-run as one pass since that edit |
 | Canonical deployment, explorer link, source parity | **not done** |
 
-The real-LLM behaviour of the strict verbatim accounting is therefore unproven live. If it proves too brittle, the
-failure mode is `UNCLASSIFIED` (safe), not a false FAITHFUL.
+A real-validator FAITHFUL verdict and a real INCOMPLETE verdict (omission caught) have been observed on Studionet. Transaction hashes were not recorded, so they are not cited as evidence.
 
 ## Verdict model
 
