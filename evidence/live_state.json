@@ -1,0 +1,127 @@
+{
+  "txs": [
+    {
+      "label": "deploy",
+      "hash": "0xd071b6ed84491ca46afad7defaea5056588ecf6a36b77c5540bc0b9ce26db6ce",
+      "status": "ACCEPTED",
+      "ok": true
+    },
+    {
+      "label": "register faithful",
+      "hash": "0x1796fe092eb15ad86a752e14d1125f1e8c4b9c78071edecd190304a6314fc8b9",
+      "status": "ACCEPTED",
+      "ok": true
+    },
+    {
+      "label": "audit faithful",
+      "hash": "0x5509438bf48aa6f53b01c82d5c3cdbe9fcef46f1f62cd90cd4771cb4e487543f",
+      "status": "ACCEPTED",
+      "ok": true
+    },
+    {
+      "label": "register wrong_figure",
+      "hash": "0xb581681e79868c7308422900eeadfd2a37a7fe0f6e66364428c7b6f5afce88a8",
+      "status": "ACCEPTED",
+      "ok": true
+    },
+    {
+      "label": "audit wrong_figure",
+      "hash": "0xf5cecab646fcf8226e534659c04f8908099c1f7d26095fac192edc412d1592ea",
+      "status": "ACCEPTED",
+      "ok": true
+    },
+    {
+      "label": "register silent",
+      "hash": "0x5de0b7abd680539db789bed018fc9782f9a23e402b13048b70bc4772b31942f4",
+      "status": "ACCEPTED",
+      "ok": true
+    },
+    {
+      "label": "audit silent",
+      "hash": "0x62b1af49ba4785bafcf146c30bea42f55068e3e94646dead7b9aefe210934702",
+      "status": "ACCEPTED",
+      "ok": true
+    },
+    {
+      "label": "revise wrong_figure -> corrected summary",
+      "hash": "0x2acf58f35520ef913641ab2d2876c680cb2b3f351f824bfe53b9d2e63ef52cc7",
+      "status": "ACCEPTED",
+      "ok": true
+    },
+    {
+      "label": "re-audit wrong_figure after revise",
+      "hash": "0x83a88269a11bcd87f5d85826f42847e1b59efba299200f1b271a4066e2fe6340",
+      "status": "ACCEPTED",
+      "ok": true
+    }
+  ],
+  "digests": {
+    "faithful": 1,
+    "wrong_figure": 2,
+    "silent": 3
+  },
+  "deployer": "0x3BAb8bdc7337B6F419b529759Facaf0B869e6F27",
+  "address": "0x611Ce44Cc09BD22179722fc132358383f7D55b16",
+  "results": {
+    "faithful": {
+      "status": "FAITHFUL",
+      "version": 1,
+      "receipts": 1,
+      "last_receipt": {
+        "defects": 0,
+        "findings": [],
+        "fingerprint": "71e53cab608e39dec212027bb913a5d360401acdc799259b7f91d0d1b930b8c0",
+        "outcome": "FAITHFUL",
+        "seq": 1,
+        "source_digest": "25febba2121a77adafa94f660a93d438d5a668b2cc99d90ab7f979b425d63f05",
+        "summary_hash": "add8b8f085e56c7b3091fb0d4626b9867d79f2ebc19f797964a7d5ebeb08cd3e",
+        "ts": 1792359106,
+        "ungrounded": [],
+        "version": 1
+      },
+      "reliance": "RELIABLE"
+    },
+    "wrong_figure": {
+      "status": "FAITHFUL",
+      "version": 2,
+      "receipts": 2,
+      "last_receipt": {
+        "defects": 0,
+        "findings": [],
+        "fingerprint": "71e53cab608e39dec212027bb913a5d360401acdc799259b7f91d0d1b930b8c0",
+        "outcome": "FAITHFUL",
+        "seq": 2,
+        "source_digest": "25febba2121a77adafa94f660a93d438d5a668b2cc99d90ab7f979b425d63f05",
+        "summary_hash": "add8b8f085e56c7b3091fb0d4626b9867d79f2ebc19f797964a7d5ebeb08cd3e",
+        "ts": 1792359309,
+        "ungrounded": [],
+        "version": 2
+      },
+      "reliance": "RELIABLE"
+    },
+    "silent": {
+      "status": "MISLEADING",
+      "version": 1,
+      "receipts": 1,
+      "last_receipt": {
+        "defects": 2,
+        "findings": [
+          {
+            "kind": "CONTRADICTION",
+            "source_quote": "Acme may freeze all withdrawals indefinitely.",
+            "summary_quote": "Withdrawals are always available."
+          }
+        ],
+        "fingerprint": "b48197c5052c753334214fb1b23a320a970606c1c0db5897299db1170e31c033",
+        "outcome": "MISLEADING",
+        "seq": 1,
+        "source_digest": "a38a3b5ee76d95bb82af1324131682632ce742dd186108eeb0c7b5974118a7ad",
+        "summary_hash": "c007fe5b9be79ed7a82f48886242cb5a7138f578b0cbd59f48fb2e195e5211e0",
+        "ts": 1792359210,
+        "ungrounded": [],
+        "version": 1
+      },
+      "reliance": "BLOCKED"
+    }
+  }
+}

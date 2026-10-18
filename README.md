@@ -18,9 +18,9 @@ the summary. Other contracts read `attests(id, summary_hash, now_ts, max_age_s)`
 | Mutation checks | 5 deliberate validator/gate breakages each made tests fail (verdict compare, UNCLASSIFIED censorship, digest, coverage, figure floor) |
 | GenVM lint / SDK check (`genvm-lint` 0.11.0) | passed, 12 methods (8 view, 4 write); reports a newer py-genlayer runner exists than the header pins |
 | Studionet integration (`tests/integration`, 5 tests, real validators, disposable contracts) | first run: 2 passed, 3 failed on gateway `RemoteDisconnected` (transport). Second run: 4 passed, 1 failed: the live model correctly returned INCOMPLETE because my test summary omitted an early-exit cost the scope covers (test bug, fixed). After the fix, the faithful test alone passed live (FAITHFUL with a grounded receipt and `attests` true). The full suite has not been re-run as one pass since that edit |
-| Canonical deployment, explorer link, source parity | **not done** |
+| Canonical deployment | Studionet `0x611Ce44Cc09BD22179722fc132358383f7D55b16` ([explorer](https://explorer-studio.genlayer.com/address/0x611Ce44Cc09BD22179722fc132358383f7D55b16)), live FAITHFUL, MISLEADING (grounded contradiction) and revise-then-FAITHFUL recorded in [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md). Txs are ACCEPTED; FINALIZED not checked. Integration suite has not passed 5/5 in one run (gateway disconnects at deploy; 4/5 best). On-chain code not byte-compared to the file |
 
-A real-validator FAITHFUL verdict and a real INCOMPLETE verdict (omission caught) have been observed on Studionet. Transaction hashes were not recorded, so they are not cited as evidence.
+A real-validator FAITHFUL verdict and a real INCOMPLETE verdict (omission caught) have been observed on Studionet. Hashes for the canonical run are in docs/DEPLOYMENT.md.
 
 ## Verdict model
 
